@@ -29,6 +29,10 @@ struct AppFeature {
         case start
     }
     
+    var body: some Reducer<State, Action> {
+        self.core
+    }
+    
     @ReducerBuilder<State,Action>
     var core: some Reducer<State, Action> {
         Scope(state: \.appDelegate, action: \.appDelegate) {
